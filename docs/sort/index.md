@@ -58,12 +58,27 @@ Lưu ý rằng giải thuật sort này là giải thuật có tính ổn địn
 Thuật toán sắp xếp chèn được sử dụng trong các trường hợp:
 - Mảng có ít phần tử
 - Mảng gần như đã được sắp xếp, chỉ một vài phần tử bị đặt sai chỗ
+Hàm có cú pháp như sau:
+```commandline
+myarrayutils.sort.SelectionSort(arr)
+```
+Với arr là dữ liệu cần sắp xếp, có thể là một List hay một Dictionaries ...
+Kiểu dữ liệu trả về là tương tự như biến arr.
 
+Ngoài ra, hàm còn có hai đầu vào mở rộng để người dùng sử dụng cho nhiều mục đích khác:
+
+cmp: nếu người dùng không chỉ định, hàm sẽ sử dụng phép so sánh đại số bình thường. Người dùng cần quan tâm tham số này khi thao tác trên các cấu trúc dữ liệu có nhiều thuộc tính. (VD tham số đầu vào là một dict có 3 thuộc tính, và cần một quy trình nhiều bước để xác định một giá trị có lớn hơn giá trị còn lại hay không, khi đó ta sẽ tạo một hàm so sánh và truyền vào thông qua tham số smp).
+everse: đầu vào mặc định là false, khi reverse là False, hàm sẽ sắp xếp các dữ liệu tăng dần, nếu là True, hàm sẽ sắp xếp dữ liệu giảm dần.
 ## Merge sort
 
 ## Quick sort
 
 ## Selection sort
+Thuật toán Selection Sort sắp xếp một mảng bằng cách đi tìm phần tử có giá trị nhỏ nhất(giả sử với sắp xếp mảng tăng dần) trong đoạn đoạn chưa được sắp xếp và đổi cho phần tử nhỏ nhất đó với phần tử ở đầu đoạn chưa được sắp xếp(không phải đầu mảng). Thuật toán sẽ chia mảng làm 2 mảng con
+
+1/ Một mảng con đã được sắp xếp
+2/ Một mảng con chưa được sắp xếp
+Tại mỗi bước lặp của thuật toán, phần tử nhỏ nhất ở mảng con chưa được sắp xếp sẽ được di chuyển về đoạn đã sắp xếp.
 
 ## Shell sort
 **Shell Sort** là một giải thuật sắp xếp mang lại hiệu quả cao dựa trên giải thuật **sắp xếp chèn (Insertion Sort)**. Giải thuật này tránh các trường hợp phải tráo đổi vị trí của hai phần tử xa nhau trong giải thuật sắp xếp chọn (nếu như phần tử nhỏ hơn ở vị trí bên phải khá xa so với phần tử lớn hơn bên trái).
