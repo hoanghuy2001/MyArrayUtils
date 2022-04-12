@@ -84,7 +84,22 @@ Lưu ý rằng giải thuật sort này là giải thuật có tính ổn địn
 ## Quick sort
 
 ## Selection sort
+Thuật toán sắp xếp lựa chọn sắp xếp một mảng bằng cách liên tục tìm phần tử nhỏ nhất (xem xét thứ tự tăng dần) từ phần không được sắp xếp và đặt nó ở đầu. Thuật toán duy trì hai mảng con trong một mảng nhất định.
+        1) Mảng con đã được sắp xếp.
+        2) Mảng con còn lại chưa được sắp xếp.
+Trong mỗi lần lặp lại sắp xếp lựa chọn, phần tử tối thiểu (xét theo thứ tự tăng dần) từ mảng con không được sắp xếp là đã chọn và chuyển đến mảng con đã sắp xếp.
+Hàm có cú pháp như sau:
+```commandline
+myarrayutils.sort.SelectionSort(arr)
+```
+Với arr là dữ liệu cần sắp xếp, có thể là một List hay một Dictionaries ...
+Kiểu dữ liệu trả về là tương tự như biến arr.
 
+Ngoài ra, hàm còn có hai đầu vào mở rộng để người dùng sử dụng cho nhiều mục đích khác:
+
+cmp: nếu người dùng không chỉ định, hàm sẽ sử dụng phép so sánh đại số bình thường. Người dùng cần quan tâm tham số này khi thao tác trên các cấu trúc dữ liệu có nhiều thuộc tính. (VD tham số đầu vào là một dict có 3 thuộc tính, và cần một quy trình nhiều bước để xác định một giá trị có lớn hơn giá trị còn lại hay không, khi đó ta sẽ tạo một hàm so sánh và truyền vào thông qua tham số smp)
+
+reverse: đầu vào mặc định là false, khi reverse là False, hàm sẽ sắp xếp các dữ liệu tăng dần, nếu là True, hàm sẽ sắp xếp dữ liệu giảm dần.
 ## Shell sort
 **Shell Sort** là một giải thuật sắp xếp mang lại hiệu quả cao dựa trên giải thuật **sắp xếp chèn (Insertion Sort)**. Giải thuật này tránh các trường hợp phải tráo đổi vị trí của hai phần tử xa nhau trong giải thuật sắp xếp chọn (nếu như phần tử nhỏ hơn ở vị trí bên phải khá xa so với phần tử lớn hơn bên trái).
 
